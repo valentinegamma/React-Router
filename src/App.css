@@ -201,6 +201,8 @@ nav > a {
 
 .vans-container-grid {
   display: grid;
+  column-gap: 2rem;
+  row-gap: 5rem;
   grid-template-columns: repeat(2,1fr);
 }
 
@@ -210,7 +212,7 @@ nav > a {
 }
 
 .van-img-container {
-  width: 24.4rem;
+  max-width: 24.4rem;
   height: 22.9rem;
   border-radius: 0.5rem;
   overflow: hidden;

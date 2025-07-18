@@ -1,18 +1,16 @@
 import { useEffect, useState} from 'react'
-import img from '../assets/home-img.jpg'
+import vans from '../Server2'
 
 function Vans() {
 
-  const [data, setData] = useState([]) 
-  useEffect(() =>{
-    fetch("/api/vans")
-      .then((res) => res.json())
-      .then((json) => {
-        setData(json.vans)
-      })
-  }, [])
+  // const [vans, setVans] = useState([vans]) 
+  // useEffect(() =>{
+  //   fetch("/api/vans")
+  //     .then(res => res.json())
+  //     .then(data => setVans(data.vans))
+  // }, [])
 
-  console.log(data);
+  console.log(vans);
   
   function VansTemp(props) {
     return (
@@ -29,12 +27,12 @@ function Vans() {
     )
   }
 
-  const renderVans = data.map(data =>
+  const renderVans = vans.map(data =>
     <VansTemp
       key = {data.id}
       name = {data.name}
       price = {data.price}
-      img = {data.imgUrl}
+      img = {data.imageUrl}
       type = {data.type}
     />
   )
@@ -47,8 +45,9 @@ function Vans() {
         <button>Rugged</button>
         <button className='clear-filters'>Clear filters</button>
       </div>
-
-      {renderVans}
+      <div className="vans-container-grid">
+        {renderVans}
+      </div>
     </section>
   )
 }
