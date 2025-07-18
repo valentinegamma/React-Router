@@ -17,6 +17,12 @@ a {
   text-decoration: none;
   color: inherit;  
 }
+
+button {
+  border: none;
+  outline: none;
+  font-family: 'inter', sans-serif;
+}
 .container {
   background-color: #FFF7ED;
   width: 100%;
@@ -157,6 +163,97 @@ nav > a {
   font-weight: 700;
   font-size: 1.6rem;
 }
+
+/* VANS */
+
+.vans-container {
+  padding: 3rem 3rem;
+
+}
+.vans-container > h1 {
+  width: 49.4rem;
+  height: 3.4rem;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 3.2rem;
+  margin-bottom: 3rem;
+ 
+
+}
+
+.filter-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+.filter-btns > button {
+  width: 10.4rem;
+  height: 3.7rem;
+  border-radius: 0.5rem;
+  color: #4D4D4D;
+  background-color: #FFEAD0;
+}
+.filter-btns > .clear-filters {
+  background-color: inherit;
+  text-decoration: underline;
+}
+
+.vans-container-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+.van-flex{
+  display: flex;
+  flex-direction: column;
+}
+
+.van-img-container {
+  width: 24.4rem;
+  height: 22.9rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.van-img-container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.van-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  width: 100%;
+}
+.van-details > h2{
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.7rem;
+  color: #161616;
+}
+.van-details  span {
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: right;
+}
+
+.van-flex > button {
+  /* align-self: flex-start; */
+  width: 8.5rem;
+  height: 3.3rem;
+  background-color: #E17654;
+  color: #FFEAD0;
+  font-weight: 600;
+
+border-radius: 5px;
+
+}
+
+
+
 /* FOOTER */
 
 footer {
@@ -166,7 +263,6 @@ footer {
   width: 54.8rem;
   height: 7.4rem;
   background: #252525;
-  /* margin-bottom: 1rem; */
 }
 footer p {
   font-size: 1.4rem;
