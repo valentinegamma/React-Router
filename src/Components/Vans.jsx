@@ -1,7 +1,6 @@
 // import { useEffect, useState} from 'react'
 import vans from '../Server2'
 import { Link } from 'react-router-dom';
-import img from '../assets/about-img.png'
 
 function Vans() {
 
@@ -19,7 +18,7 @@ function Vans() {
       <Link to={`/vans/${props.id}`}>
         <div className="van-flex">
         <div className="van-img-container">
-          <img src={img} alt='img' />
+          <img src={props.imageUrl} alt='img' />
         </div>
         <div className='van-details'>
           <h2>{props.name}</h2>

@@ -59,6 +59,7 @@ nav > a {
 }
 
 .nav-host {
+  margin-bottom: 3rem;
   display: flex;
   justify-content: flex-start;
   padding: 0rem 2.4rem;
@@ -102,7 +103,6 @@ nav > a {
 .home-text h2 {
   font-size: 3.6rem;
   font-weight: 700;
-  font-weight: 800;
 }
 .home-text p {
   font-size: 1.6rem;
@@ -113,7 +113,7 @@ nav > a {
   justify-content: center;
   align-items: center;
   width: 49.4rem;
-  height: 4.9rem;
+  height: 10rem;
   background: #FF8C38;
   color: #FFFFFF;
   font-weight: 700;
@@ -256,15 +256,14 @@ nav > a {
   text-align: right;
 }
 
-.van-flex > button {
+.host-van-details-button, .van-flex > button {
   /* align-self: flex-start; */
   width: 8.5rem;
   height: 3.3rem;
   background-color: #E17654;
   color: #FFEAD0;
   font-weight: 600;
-
-border-radius: 5px;
+  border-radius: 5px;
 
 }
 
@@ -412,4 +411,60 @@ button.rent-van {
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 3.1rem;
+}
+
+/* HOST VAN DETAILS */
+
+.hostvan-section {
+  background-color: #FFFFFF;
+}
+
+h1.host-van-details-h1 {
+  line-height: 3rem;
+}
+.host-van-details-grid {
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 18rem 18rem;
+  padding-left: 2rem;
+  background-color: #FFFFFF;
+}
+
+.host-van-details-grid img{
+width: 16.014981079101562rem;
+height: 15.790322875976562rem;
+border-radius: 0.5rem;
+
+}
+.host-van-details-flex {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.host-van-details-flex span {
+  font-weight: 400;
+}
+
+.hostvan-details-nav {
+  margin-top: 2rem;
+  gap: 4rem;
+  display: flex;
+  justify-content: flex-start;
+ 
+}
+.hostvan-details-nav a {
+   font-size: 1.615rem;
+  font-weight: 500;
+  line-height: 2.057rem;
+}
+
+a.Host-van-details-link {
+  padding: 0rem 2.4rem;
+  font-weight: 500;
+  font-size: 1.595rem;
+  line-height: 2.292rem;
+  text-decoration: underline;
+  color: #201F1D;
 }

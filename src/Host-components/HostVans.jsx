@@ -1,14 +1,14 @@
 import React from 'react'
 import Server2 from '../Server2'
-import img from '../assets/home-img.jpg'
+import { Link } from 'react-router-dom'
 
 function HostVans() {
     const vans = Server2.filter(van => van.hostID === 1234)
     console.log(vans)
     const rendervans = vans.map(vans => 
-     
+     <Link to={`/host/hostvans/${vans.id}`}>
       <div className='host-van-flex'>
-        <img src={img} alt="Van Image" />
+        <img src={vans.imageUrl} alt="Van Image" />
         <h1>
           {vans.name}
           <br />
@@ -17,6 +17,8 @@ function HostVans() {
           </span>
         </h1>
       </div>
+     </Link>
+
     )
 
   return (
