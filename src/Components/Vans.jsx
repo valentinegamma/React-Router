@@ -1,5 +1,7 @@
-import { useEffect, useState} from 'react'
+// import { useEffect, useState} from 'react'
 import vans from '../Server2'
+import { Link } from 'react-router-dom';
+import img from '../assets/about-img.png'
 
 function Vans() {
 
@@ -14,22 +16,25 @@ function Vans() {
   
   function VansTemp(props) {
     return (
-      <div className="van-flex">
-      <div className="van-img-container">
-        <img src={props.img} alt='img' />
-      </div>
-      <div className='van-details'>
-        <h2>{props.name}</h2>
-        <h2>{props.price} <br /> <span>/day</span></h2>
-      </div>
+      <Link to={`/vans/${props.id}`}>
+        <div className="van-flex">
+        <div className="van-img-container">
+          <img src={img} alt='img' />
+        </div>
+        <div className='van-details'>
+          <h2>{props.name}</h2>
+          <h2>${props.price} <br /> <span>/day</span></h2>
+        </div>
       <button>{props.type}</button>
     </div>
+      </Link>
     )
   }
 
   const renderVans = vans.map(data =>
     <VansTemp
       key = {data.id}
+      id = {data.id}
       name = {data.name}
       price = {data.price}
       img = {data.imageUrl}
