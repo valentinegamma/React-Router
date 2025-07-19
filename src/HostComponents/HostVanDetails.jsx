@@ -1,6 +1,6 @@
 import React from 'react'
 import vans from '../Server2'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, Outlet } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 
 
@@ -8,10 +8,16 @@ function HostVanDetails() {
 
   const param = useParams()
   const [ van ] = vans.filter(van => param.id === van.id  )
-  console.log(van)
+  // console.log(van)
+
+  const styles = {
+    color:'#161616',
+    textDecoration: 'underline',
+    fontWeight: 'bold'
+  }
   return (
     <>
-      <Link to='/host/hostvans' className='Host-van-details-link'> ← Back to all vans</Link>
+      <Link to='..' relative= 'path' className='Host-van-details-link'> ← Back to all vans</Link>
       <section className='hostvan-section'>
         <div className='host-van-details-grid'>
           <img src={van.imageUrl} alt="Van Image" />
@@ -28,11 +34,13 @@ function HostVanDetails() {
           </div>
         </div>
         <nav className='hostvan-details-nav'>
-          <NavLink>Details</NavLink>
-          <NavLink>Pricing</NavLink>
-          <NavLink>Photos</NavLink>
+          <NavLink to={`/host/hostvans/${van.id}`}style={({isActive}) =>  isActive ? styles : null} end>Details</NavLink>
+          <NavLink to='pricing'style={({isActive}) =>  isActive ? styles : null}>Pricing</NavLink>
+          <NavLink to='photos'style={({isActive}) =>  isActive ? styles : null}>Photos</NavLink>
         </nav>
       </section>
+
+      <Outlet />
     </>
   )
 }

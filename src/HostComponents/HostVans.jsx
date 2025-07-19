@@ -18,7 +18,6 @@ function HostVans() {
         </h1>
       </div>
      </Link>
-
     )
 
   return (
