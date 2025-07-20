@@ -4,14 +4,14 @@ import Home from './Components/Home'
 import About from './Components/About'
 import Vans from './Components/Vans'
 import Host from './Components/Host'
-import Dashboard from './HostComponents/Dashboard.js'
-import Income from './HostComponents/Income.js'
+import Dashboard from './HostComponents/Dashboard'
+import Income from './HostComponents/Income'
 import Reviews from './HostComponents/Reviews.jsx'
-import HostVans from './HostComponents/HostVans.js'
+import HostVans from './HostComponents/HostVans'
 import HostVanDetails from './HostComponents/HostVanDetails.jsx';
-import Details from './HostComponents/Details.js';
-import Pricing from './HostComponents/Pricing.js';
-import Photos from './HostComponents/Photos.js';
+import Details from './HostComponents/Details';
+import Pricing from './HostComponents/Pricing';
+import Photos from './HostComponents/Photos';
 import VanDetails from './Components/VanDetails'
 import {BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './Components/Layout'
