@@ -2,7 +2,6 @@ import React from 'react'
 import {useParams} from 'react-router-dom'
 import vans from '../Server2.js'
 import {Link} from 'react-router-dom'
-import img from '../assets/home-img.jpg'
 
 function VanDetails() {
   const params = useParams()
@@ -20,7 +19,7 @@ function VanDetails() {
   return (
     <section className='van-details-page'>
         <Link to = '/vans'>← Back to all vans</Link>
-        <img src={img} alt="image" />
+        <img src={van.imageUrl} alt="image" />
         <button>{van.type}</button>
         <h1>{van.name}</h1>
         <h2>${van.price} <span>/day</span></h2>

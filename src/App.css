@@ -182,7 +182,6 @@ nav > a {
 
 .vans-container {
   padding: 3rem 3rem;
-
 }
 .vans-container > h1 {
   width: 49.4rem;
@@ -191,7 +190,6 @@ nav > a {
   font-style: Bold;
   font-size: 3.2rem;
   margin-bottom: 3rem;
- 
 
 }
 
@@ -416,6 +414,10 @@ button.rent-van {
 /* HOST VAN DETAILS */
 
 .hostvan-section {
+  padding: 1rem 0rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 90%;
   background-color: #FFFFFF;
 }
 
@@ -432,9 +434,9 @@ h1.host-van-details-h1 {
 }
 
 .host-van-details-grid img{
-width: 16.014981079101562rem;
-height: 15.790322875976562rem;
-border-radius: 0.5rem;
+  width: 16.rem;
+  height: 15.79rem;
+  border-radius: 0.5rem;
 
 }
 .host-van-details-flex {
@@ -448,7 +450,9 @@ border-radius: 0.5rem;
 }
 
 .hostvan-details-nav {
-  margin-top: 2rem;
+  padding-top: 2rem;
+  margin: 0 auto;
+  width: 90%;
   gap: 4rem;
   display: flex;
   justify-content: flex-start;
@@ -467,4 +471,55 @@ a.Host-van-details-link {
   line-height: 2.292rem;
   text-decoration: underline;
   color: #201F1D;
+}
+
+.host-van-details-data {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column; 
+  gap: 3rem;
+  margin: 0rem auto;
+  padding: 3rem 2rem;
+  width: 90%;
+}
+
+.host-van-details-data > h1 {
+font-weight: 700;
+font-style: Bold;
+font-size: 1.435rem;
+line-height: 2.146rem;
+}
+
+.host-van-details-data  span {
+font-weight: 500;
+font-style: Medium;
+font-size: 1.435rem;
+line-height: 21.46px;
+}
+
+.host-van-pricing,.host-van-details-photos {
+  margin: 0rem auto;
+  padding: 3rem 2rem;
+  width: 90%;
+  background-color: #FFFFFF;
+}
+
+.host-van-pricing > h1 {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 2.146rem;
+  color: #161616;
+}
+
+.host-van-pricing span {
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #4D4D4D;
+}
+
+.host-van-details-photos > img {
+  width: 10.3rem;
+height: 10.155511474609375rem;
+border-radius: 0.5rem;
+
 }
