@@ -18,7 +18,7 @@ function Vans() {
       <Link to={`/vans/${props.id}`}>
         <div className="van-flex">
         <div className="van-img-container">
-          <img src={props.imageUrl} alt='img' />
+          <img src={props.img} alt='img' />
         </div>
         <div className='van-details'>
           <h2>{props.name}</h2>
