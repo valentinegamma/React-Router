@@ -1,10 +1,11 @@
 import React from 'react'
-import vans from '../Server2'
-import { Link, useParams, Outlet } from 'react-router-dom'
+import { Link, useParams, Outlet, useLoaderData } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 
 
 function HostVanDetails() {
+
+  const vans = useLoaderData()
 
   const param = useParams()
   const [ van ] = vans.filter(van => param.id === van.id  )

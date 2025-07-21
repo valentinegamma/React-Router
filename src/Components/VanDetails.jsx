@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom'
 function VanDetails() {
   const params = useParams()
   const {state} = useLocation()
-  console.log(state)
 
 
   const [van] = vans.filter(van =>{

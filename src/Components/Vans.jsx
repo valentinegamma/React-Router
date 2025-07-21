@@ -1,14 +1,13 @@
-// import { useEffect, useState} from 'react'
-import vans from '../Server2'
-import { Link, useSearchParams} from 'react-router-dom';
+import { useEffect, useState} from 'react'
+import { Link, useSearchParams, useLoaderData } from 'react-router-dom';
+
 
 function Vans() {
 
   const [searchParams, setSearchParams] = useSearchParams()
   const typeFilter = searchParams.get('type')
-  console.log(typeFilter)
-  console.log(searchParams)
-
+    const vans = useLoaderData()
+  
 
 
   function VansTemp(props) {
@@ -41,6 +40,9 @@ function Vans() {
       type = {data.type}
     />
   )
+
+
+
   return (
     <section className='vans-container'>
       <h1>Explore our van options</h1>
