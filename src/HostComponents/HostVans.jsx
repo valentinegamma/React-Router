@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom'
 
 function HostVans() {
     const vans = Server2.filter(van => van.hostID === 1234)
-    console.log(vans)
     const rendervans = vans.map(vans => 
-     <Link to={`/host/hostvans/${vans.id}`}>
+      <Link to={vans.id}>
       <div className='host-van-flex'>
         <img src={vans.imageUrl} alt="Van Image" />
         <h1>

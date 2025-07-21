@@ -1,21 +1,19 @@
 // import { useEffect, useState} from 'react'
 import vans from '../Server2'
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams} from 'react-router-dom';
 
 function Vans() {
 
-  // const [vans, setVans] = useState([vans]) 
-  // useEffect(() =>{
-  //   fetch("/api/vans")
-  //     .then(res => res.json())
-  //     .then(data => setVans(data.vans))
-  // }, [])
+  const [searchParams, setSearchParams] = useSearchParams()
+  const typeFilter = searchParams.get('type')
+  console.log(typeFilter)
+  console.log(searchParams)
 
-  console.log(vans);
-  
+
+
   function VansTemp(props) {
     return (
-      <Link to={`/vans/${props.id}`}>
+      <Link to={props.id}  state={{search: searchParams.toString()}}>
         <div className="van-flex">
         <div className="van-img-container">
           <img src={props.img} alt='img' />
@@ -30,7 +28,10 @@ function Vans() {
     )
   }
 
-  const renderVans = vans.map(data =>
+  const filteredVans = typeFilter ? 
+    vans.filter(van => van.type === typeFilter)
+    : vans
+  const renderVans = filteredVans.map(data =>
     <VansTemp
       key = {data.id}
       id = {data.id}
@@ -44,10 +45,10 @@ function Vans() {
     <section className='vans-container'>
       <h1>Explore our van options</h1>
       <div className="filter-btns">
-        <button>Simple</button>
-        <button>Luxury</button>
-        <button>Rugged</button>
-        <button className='clear-filters'>Clear filters</button>
+        <button onClick={() =>setSearchParams({type: "simple"})}>Simple</button>
+        <button onClick={() =>setSearchParams({type: "luxury"})}>Luxury</button>
+        <button onClick={() =>setSearchParams({type: "rugged"})}>Rugged</button>
+        {typeFilter && <button className='clear-filters'onClick={() =>setSearchParams({})}>Clear filters</button>}
       </div>
       <div className="vans-container-grid">
         {renderVans}

@@ -1,10 +1,12 @@
 import React from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams, useLocation} from 'react-router-dom'
 import vans from '../Server2.js'
 import {Link} from 'react-router-dom'
 
 function VanDetails() {
   const params = useParams()
+  const {state} = useLocation()
+  console.log(state)
 
 
   const [van] = vans.filter(van =>{
@@ -18,7 +20,12 @@ function VanDetails() {
 
   return (
     <section className='van-details-page'>
-        <Link to = '/vans'>← Back to all vans</Link>
+        <Link 
+        to = {state ? `../?${state.search}`: '..'}
+        relative='path'
+        >
+         {state.search  ? `← Back to ${van.type} vans`: '← Back to all vans'}
+        </Link>
         <img src={van.imageUrl} alt="image" />
         <button>{van.type}</button>
         <h1>{van.name}</h1>

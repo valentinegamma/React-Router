@@ -8,7 +8,6 @@ function HostVanDetails() {
 
   const param = useParams()
   const [ van ] = vans.filter(van => param.id === van.id  )
-  // console.log(van)
 
   const styles = {
     color:'#161616',
