@@ -8,7 +8,7 @@ function HostVans() {
   const vans = Server2.filter(van => van.hostID === 1234)
   const rendervans = vans.map(vans => 
     <Link to={vans.id}>
-    <div className='host-van-flex'>
+    <div className='host-van-flex' key={vans.id}>
       <img src={vans.imageUrl} alt="Van Image" />
       <h1>
         {vans.name}
