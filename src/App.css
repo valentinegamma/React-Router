@@ -573,13 +573,14 @@ line-height: 21.46px;
   gap: 7rem;
 }
 
-.log-in div {
+.log-in form {
+  gap: 3rem;
   display: flex;
   flex-direction: column;
   width: 49.4rem;
   height: 16.1rem;
 }
-.log-in div > button {
+.log-in form > button {
   color: #FFFFFF;
   background-color: #FF8C38;
   width: 100%;
@@ -624,3 +625,51 @@ line-height: 21.46px;
   line-height: 2.4rem;
   color: #E17654;
 }
+
+.dashboard-1 {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem;
+  flex-direction: column;
+  background-color: #FFEAD0;
+}
+
+.dashboard-1 > h1 {
+  font-weight: 700;
+  font-size: 3.6rem;
+  line-height: 2.2rem;
+  color: #161616;
+}
+
+.dashboard-1 > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-1 > div > h3 {
+  color: #4D4D4D;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+}
+
+.review-score  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 2rem;
+  background-color: #FFDDB2;
+  width: 54.8rem;
+  height: 11.3rem;
+}
+
+.review-score > div {
+  display: flex;
+  gap: 4rem;
+}
+.review-score > div > div{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
