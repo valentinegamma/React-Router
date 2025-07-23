@@ -1,19 +1,25 @@
-import { redirect } from 'react-router-dom'
+import { redirect , Navigate} from 'react-router-dom'
 import vans from '../Server2'
 
 export function loader(logged) {
-const isLoggedIn = logged
-console.log(isLoggedIn)
+  if (logged !== undefined) {
+    localStorage.setItem('logged', logged)
+  }
+  
+  const loggedValue = localStorage.getItem('logged')
+  console.log(loggedValue)
+  const isLoggedIn = loggedValue ? loggedValue : false
 
   if (!isLoggedIn) {
-    throw redirect('/log?message=you must log in first')
+    throw redirect('/log?message=you must log in first', {replace: true})
+
   }
 
- try{
-   return vans
-  } catch{
-    throw({
+  try {
+    return vans
+  } catch {
+    throw {
       message: 'Page data not found',
-    })
+    }
   }
 }

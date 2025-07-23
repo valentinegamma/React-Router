@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSearchParams, Form} from 'react-router-dom'
+import { useSearchParams, Form, redirect, Link} from 'react-router-dom'
 import { logUser } from './Auth'
 import { loader } from './ApiData'
 
@@ -8,17 +8,25 @@ export async function action({request}) {
   const email = data.get('email')
   const password = data.get('password')
   console.log(email, password)
-  loader(logUser(email, password))
+  const logged = logUser(email, password)
+  loader(logged)
+
+  // Get redirectTo from the request URL
+  // const url = new URL(request.url)
+  // console.log(url)
+  // const redirectTo = url.searchParams.get('redirectTo')
+
+  if (logged) {
+    return redirect('/host')
+  }
 
 }
 function LogIn() {
   const [searchParams] = useSearchParams()
-
-
   const data = searchParams.get('message')
 
   function logOut() {
-    localStorage.removeItem('loggedIn')
+    localStorage.removeItem('logged')
   }
 
 
@@ -35,8 +43,8 @@ function LogIn() {
         </div>
         <button>Sign in</button>
       </Form>
-      <button onClick={() => {logOut}}>log out</button>
       <h3>Don’t have an account? <span>Create one now</span></h3>
+      <button onClick={logOut}><Link to='/'>log out</Link></button>
     </div>
   )
 }
