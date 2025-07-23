@@ -7,13 +7,10 @@ export function loader(logged) {
   }
   
   const loggedValue = localStorage.getItem('logged')
-  console.log(loggedValue)
   const isLoggedIn = loggedValue ? loggedValue : false
 
   if (!isLoggedIn) {
-    throw redirect('/log?message=you must log in first', {replace: true})
-
-  }
+    throw redirect('/log?message=you must log in first')}
 
   try {
     return vans

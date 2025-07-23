@@ -1,7 +1,12 @@
 import Users from "./Users";
 
-export function logUser(email, password) {
- const found =  Users.filter(user => 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout (resolve,ms))
+}
+
+ export async function logUser(email, password) {
+    await sleep(1000)
+    const found =  Users.filter(user => 
     user.email === email && user.password === password
  
     )
