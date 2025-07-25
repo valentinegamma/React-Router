@@ -1,7 +1,9 @@
 import { redirect , Navigate} from 'react-router-dom'
 import vans from '../Server2'
 
-export function loader(logged) {
+export function loader(logged, request) {
+  // const url = new URL(request.url).pathname
+  // console.log(url)
   if (logged !== undefined) {
     localStorage.setItem('logged', logged)
   }

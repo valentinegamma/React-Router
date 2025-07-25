@@ -27,14 +27,14 @@ function App() {
       <Route index element={<Home />} />
       <Route path='about' element={<About />} />
       <Route path='log' element={<LogIn />} action={logAction}/>
-      <Route path='vans' element={<Vans />} loader={vansLoder}errorElement={<Error />}/>
+      <Route path='vans' element={<Vans />} loader={({request}) =>vansLoder(request)}errorElement={<Error />}/>
       <Route path='vans/:id/' element={<VanDetails />}  />
       <Route path='/host' element={<Host />} > 
-        <Route index element={<Dashboard />} loader={() => vansLoder()}/>
-        <Route path='income' element={<Income />} loader={() => vansLoder()}/>
-        <Route path='hostvans' element={<HostVans /> }loader={() => vansLoder()} errorElement={<Error />}/>
-        <Route path='reviews' element={<Reviews />} loader={() => vansLoder()}/> 
-        <Route path='hostvans/:id' element={<HostVanDetails />} loader={() => vansLoder()} >
+        <Route index element={<Dashboard />} loader={() => vansLoder()}errorElement={<Error />}/>
+        <Route path='income' element={<Income />} loader={() => vansLoder()}errorElement={<Error />}/>
+        <Route path='hostvans' element={<HostVans /> }loader={() => vansLoder()} errorElement={<Error />} />
+        <Route path='reviews' element={<Reviews />} loader={() => vansLoder()}errorElement={<Error />}/> 
+        <Route path='hostvans/:id' element={<HostVanDetails />} loader={() => vansLoder()} errorElement={<Error />}>
           <Route index element= {<Details />} />
           <Route path='pricing' element= {<Pricing />} />
           <Route path='photos' element= {<Photos />} />
